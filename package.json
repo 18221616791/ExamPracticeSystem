@@ -1,0 +1,46 @@
+{
+  "name": "question-bank-importer",
+  "version": "1.0.0",
+  "description": "题库导入系统 - 解析Word文档并导入MySQL数据库",
+  "main": "server/app.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server/app.js",
+    "server:debug": "nodemon --inspect=9229 server/app.js",
+    "server:prod": "node server/app.js",
+    "client": "cd client && npm run serve",
+    "client:build": "cd client && npm run build",
+    "build": "cd client && npm run build",
+    "start": "node server/app.js",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "logs:view": "dir server\\logs",
+    "logs:clean": "del /Q server\\logs\\*.log",
+    "debug:full": "concurrently \"npm run server:debug\" \"npm run client\""
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "iconv-lite": "^0.6.3",
+    "jsonwebtoken": "^9.0.2",
+    "jszip": "^3.10.1",
+    "mammoth": "^1.6.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.6.5",
+    "yauzl": "^2.10.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.2"
+  },
+  "keywords": [
+    "question-bank",
+    "mysql",
+    "vue",
+    "express",
+    "document-parser"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}

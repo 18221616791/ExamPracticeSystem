@@ -1,0 +1,441 @@
+[2025-06-21 00:56:54] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-21T00:56:54.937Z"}
+[2025-06-21 00:56:55] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-21 00:56:55] [INFO] [DATABASE] 数据库创建完成
+[2025-06-21 00:56:55] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-21 00:56:55] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-21 00:56:55] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-21 00:57:45] [INFO] [APP] HTTP请求开始 | {"method":"POST","url":"/api/auth/login","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 00:57:45] [INFO] [AUTH] 用户登录请求 | {"username":"admin"}
+[2025-06-21 00:57:45] [INFO] [APP] HTTP请求完成 | {"method":"POST","url":"/api/auth/login","statusCode":200,"duration":"111ms"}
+[2025-06-21 00:57:50] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 00:57:50] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 00:57:50] [ERROR] [PRACTICE] 获取随机题目失败 | {"error":"Incorrect arguments to mysqld_stmt_execute"}
+[2025-06-21 00:57:50] [ERROR] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":500,"duration":"88ms"}
+[2025-06-21 00:59:52] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"}
+[2025-06-21 00:59:54] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 00:59:54] [ERROR] [PRACTICE] 获取随机题目失败 | {"error":"Incorrect arguments to mysqld_stmt_execute"}
+[2025-06-21 00:59:54] [ERROR] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":500,"duration":"2344ms"}
+[2025-06-21 01:00:23] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"}
+[2025-06-21 01:00:23] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 01:00:25] [ERROR] [PRACTICE] 获取随机题目失败 | {"error":"Incorrect arguments to mysqld_stmt_execute"}
+[2025-06-21 01:00:25] [ERROR] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":500,"duration":"2009ms"}
+[2025-06-21 01:04:50] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"}
+[2025-06-21 01:04:51] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 01:04:51] [ERROR] [PRACTICE] 获取随机题目失败 | {"error":"Incorrect arguments to mysqld_stmt_execute"}
+[2025-06-21 01:04:51] [ERROR] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":500,"duration":"546ms"}
+[2025-06-21 01:26:43] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/?ide_webview_request_time=1750469203210","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.98.2 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36"}
+[2025-06-21 01:26:45] [ERROR] [APP] HTTP请求完成 | {"method":"GET","url":"/?ide_webview_request_time=1750469203210","statusCode":404,"duration":"2262ms"}
+[2025-06-21 01:27:51] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"}
+[2025-06-21 01:28:20] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 01:29:22] [ERROR] [PRACTICE] 获取随机题目失败 | {"error":"Incorrect arguments to mysqld_stmt_execute"}
+[2025-06-21 01:29:38] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"}
+[2025-06-21 01:29:51] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 01:30:18] [ERROR] [PRACTICE] 获取随机题目失败 | {"error":"Incorrect arguments to mysqld_stmt_execute"}
+[2025-06-21 14:03:57] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 14:04:10] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:04:23] [ERROR] [PRACTICE] 获取随机题目失败 | {"error":"Incorrect arguments to mysqld_stmt_execute"}
+[2025-06-21 14:06:48] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-21T14:06:48.871Z"}
+[2025-06-21 14:06:49] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-21 14:06:50] [INFO] [DATABASE] 数据库创建完成
+[2025-06-21 14:06:50] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-21 14:06:50] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-21 14:06:51] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-21 14:07:41] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 14:07:41] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:07:41] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"103ms"}
+[2025-06-21 14:08:03] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-21T14:08:03.393Z"}
+[2025-06-21 14:08:03] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-21 14:08:03] [INFO] [DATABASE] 数据库创建完成
+[2025-06-21 14:08:03] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-21 14:08:03] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-21 14:08:03] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-21 14:08:15] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/?ide_webview_request_time=1750514886099","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.98.2 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36"}
+[2025-06-21 14:08:15] [ERROR] [APP] HTTP请求完成 | {"method":"GET","url":"/?ide_webview_request_time=1750514886099","statusCode":404,"duration":"18ms"}
+[2025-06-21 14:13:13] [INFO] [APP] HTTP请求开始 | {"method":"POST","url":"/api/auth/login","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.98.2 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36"}
+[2025-06-21 14:13:13] [INFO] [AUTH] 用户登录请求 | {"username":"admin"}
+[2025-06-21 14:13:13] [INFO] [APP] HTTP请求完成 | {"method":"POST","url":"/api/auth/login","statusCode":200,"duration":"171ms"}
+[2025-06-21 14:13:16] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.98.2 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36"}
+[2025-06-21 14:13:16] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:13:16] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"59ms"}
+[2025-06-21 14:13:18] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.98.2 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36"}
+[2025-06-21 14:13:18] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:13:18] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"37ms"}
+[2025-06-21 14:13:19] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.98.2 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36"}
+[2025-06-21 14:13:19] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:13:19] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"51ms"}
+[2025-06-21 14:13:21] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.98.2 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36"}
+[2025-06-21 14:13:21] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:13:21] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"36ms"}
+[2025-06-21 14:13:28] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.98.2 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36"}
+[2025-06-21 14:13:28] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:13:28] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"31ms"}
+[2025-06-21 14:13:32] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.98.2 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36"}
+[2025-06-21 14:13:32] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:13:32] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"47ms"}
+[2025-06-21 14:13:33] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.98.2 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36"}
+[2025-06-21 14:13:33] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:13:33] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"46ms"}
+[2025-06-21 14:13:34] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.98.2 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36"}
+[2025-06-21 14:13:34] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:13:34] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"40ms"}
+[2025-06-21 14:14:37] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.98.2 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36"}
+[2025-06-21 14:14:38] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:14:38] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"531ms"}
+[2025-06-21 14:15:01] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 14:15:03] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:15:03] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"1817ms"}
+[2025-06-21 14:15:50] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"}
+[2025-06-21 14:15:50] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:15:51] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"42ms"}
+[2025-06-21 14:17:10] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"}
+[2025-06-21 14:17:11] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:17:11] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"1700ms"}
+[2025-06-21 14:19:26] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"}
+[2025-06-21 14:19:26] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:19:26] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"43ms"}
+[2025-06-21 14:20:07] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"}
+[2025-06-21 14:20:07] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:20:07] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"312ms"}
+[2025-06-21 14:21:11] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 14:21:13] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:21:13] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"1399ms"}
+[2025-06-21 14:22:54] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"}
+[2025-06-21 14:22:54] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:22:54] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"143ms"}
+[2025-06-21 14:22:59] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"}
+[2025-06-21 14:22:59] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:22:59] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"54ms"}
+[2025-06-21 14:25:46] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-21T14:25:46.927Z"}
+[2025-06-21 14:25:49] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-21 14:25:49] [INFO] [DATABASE] 数据库创建完成
+[2025-06-21 14:25:49] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-21 14:25:49] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-21 14:25:49] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-21 14:26:04] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"}
+[2025-06-21 14:26:05] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:26:37] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"}
+[2025-06-21 14:26:37] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:27:13] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-21T14:27:13.604Z"}
+[2025-06-21 14:27:14] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-21 14:27:14] [INFO] [DATABASE] 数据库创建完成
+[2025-06-21 14:27:15] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-21 14:27:16] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-21 14:27:16] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-21 14:27:33] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 14:27:33] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:27:33] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"150ms"}
+[2025-06-21 14:27:42] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 14:27:42] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:27:42] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"34ms"}
+[2025-06-21 14:28:19] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 14:28:20] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:28:20] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"67ms"}
+[2025-06-21 14:29:39] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 14:29:39] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:29:39] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"34ms"}
+[2025-06-21 14:30:21] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 14:30:21] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:30:21] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"294ms"}
+[2025-06-21 14:33:01] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"}
+[2025-06-21 14:33:01] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:33:01] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"32ms"}
+[2025-06-21 14:33:41] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"}
+[2025-06-21 14:33:41] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:33:41] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"57ms"}
+[2025-06-21 14:36:33] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"}
+[2025-06-21 14:36:33] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:36:33] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"157ms"}
+[2025-06-21 14:42:52] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"}
+[2025-06-21 14:42:54] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:42:54] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"2211ms"}
+[2025-06-21 14:43:27] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 14:43:27] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:43:28] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"530ms"}
+[2025-06-21 14:43:41] [INFO] [APP] HTTP请求开始 | {"method":"POST","url":"/api/practice/submit","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 14:43:42] [ERROR] [PRACTICE] 提交答案失败 | {"error":"Cannot read properties of undefined (reading 'toLowerCase')"}
+[2025-06-21 14:43:42] [ERROR] [APP] HTTP请求完成 | {"method":"POST","url":"/api/practice/submit","statusCode":500,"duration":"1172ms"}
+[2025-06-21 14:44:15] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"}
+[2025-06-21 14:44:15] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 14:44:15] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"487ms"}
+[2025-06-21 14:48:23] [INFO] [APP] HTTP请求开始 | {"method":"POST","url":"/api/auth/login","ip":"::1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"}
+[2025-06-21 14:48:25] [INFO] [AUTH] 用户登录请求 | {"username":"admin"}
+[2025-06-21 14:48:25] [INFO] [APP] HTTP请求完成 | {"method":"POST","url":"/api/auth/login","statusCode":200,"duration":"2346ms"}
+[2025-06-21 14:54:05] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-21T14:54:05.024Z"}
+[2025-06-21 14:54:05] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-21 14:54:05] [INFO] [DATABASE] 数据库创建完成
+[2025-06-21 14:54:05] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-21 14:54:05] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-21 14:54:05] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-21 14:55:42] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-21T14:55:42.526Z"}
+[2025-06-21 14:55:42] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-21 14:55:42] [INFO] [DATABASE] 数据库创建完成
+[2025-06-21 14:55:42] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-21 14:55:42] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-21 14:55:42] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-21 14:56:27] [INFO] [APP] HTTP请求开始 | {"method":"POST","url":"/api/auth/login","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 14:56:27] [INFO] [AUTH] 用户登录请求 | {"username":"admin"}
+[2025-06-21 14:56:27] [INFO] [APP] HTTP请求完成 | {"method":"POST","url":"/api/auth/login","statusCode":200,"duration":"183ms"}
+[2025-06-21 14:56:27] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 14:56:27] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":200,"duration":"59ms"}
+[2025-06-21 14:56:27] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/import-records","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 14:56:27] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/import-records","statusCode":200,"duration":"75ms"}
+[2025-06-21 14:56:47] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/import-records","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 14:56:47] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/import-records","statusCode":304,"duration":"17ms"}
+[2025-06-21 15:08:29] [INFO] [APP] HTTP请求开始 | {"method":"POST","url":"/api/upload","ip":"::1","userAgent":"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"}
+[2025-06-21 15:08:29] [ERROR] [APP] HTTP请求完成 | {"method":"POST","url":"/api/upload","statusCode":500,"duration":"17ms"}
+[2025-06-21 15:12:31] [INFO] [APP] HTTP请求开始 | {"method":"POST","url":"/api/auth/login","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 15:12:33] [INFO] [AUTH] 用户登录请求 | {"username":"admin"}
+[2025-06-21 15:12:33] [INFO] [APP] HTTP请求完成 | {"method":"POST","url":"/api/auth/login","statusCode":200,"duration":"1912ms"}
+[2025-06-21 15:12:34] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 15:12:34] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":200,"duration":"40ms"}
+[2025-06-21 15:12:34] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/import-records","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 15:12:34] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/import-records","statusCode":200,"duration":"27ms"}
+[2025-06-21 16:08:49] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:08:50] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"46ms"}
+[2025-06-21 16:08:50] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/import-records","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:08:50] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/import-records","statusCode":304,"duration":"61ms"}
+[2025-06-21 16:12:30] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:12:30] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"71ms"}
+[2025-06-21 16:12:30] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/import-records","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:12:30] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/import-records","statusCode":304,"duration":"21ms"}
+[2025-06-21 16:12:50] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:12:50] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"25ms"}
+[2025-06-21 16:12:50] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/import-records","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:12:50] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/import-records","statusCode":304,"duration":"59ms"}
+[2025-06-21 16:21:41] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:21:41] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"18ms"}
+[2025-06-21 16:21:41] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/import-records","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:21:41] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/import-records","statusCode":304,"duration":"36ms"}
+[2025-06-21 16:22:44] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:22:44] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"18ms"}
+[2025-06-21 16:22:44] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/import-records","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:22:44] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/import-records","statusCode":304,"duration":"34ms"}
+[2025-06-21 16:23:01] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:23:01] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"17ms"}
+[2025-06-21 16:23:01] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/import-records","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:23:01] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/import-records","statusCode":304,"duration":"34ms"}
+[2025-06-21 16:23:11] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:23:11] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"19ms"}
+[2025-06-21 16:23:11] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/import-records","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:23:12] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/import-records","statusCode":304,"duration":"68ms"}
+[2025-06-21 16:25:12] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:25:12] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 16:25:12] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"73ms"}
+[2025-06-21 16:25:37] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:25:37] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 16:25:37] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":304,"duration":"134ms"}
+[2025-06-21 16:25:38] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:25:38] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 16:25:38] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":304,"duration":"130ms"}
+[2025-06-21 16:25:38] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:25:38] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 16:25:38] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":304,"duration":"85ms"}
+[2025-06-21 16:26:33] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:26:33] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 16:26:33] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":304,"duration":"30ms"}
+[2025-06-21 16:26:37] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:26:37] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 16:26:37] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":304,"duration":"31ms"}
+[2025-06-21 16:26:38] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:26:38] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 16:26:38] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":304,"duration":"31ms"}
+[2025-06-21 16:27:01] [INFO] [APP] HTTP请求开始 | {"method":"POST","url":"/api/auth/login","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:27:01] [INFO] [AUTH] 用户登录请求 | {"username":"admin"}
+[2025-06-21 16:27:01] [INFO] [APP] HTTP请求完成 | {"method":"POST","url":"/api/auth/login","statusCode":200,"duration":"205ms"}
+[2025-06-21 16:27:02] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:27:02] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":200,"duration":"38ms"}
+[2025-06-21 16:27:02] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/import-records","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:27:02] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/import-records","statusCode":200,"duration":"82ms"}
+[2025-06-21 16:29:10] [INFO] [APP] HTTP请求开始 | {"method":"POST","url":"/api/upload","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:29:10] [INFO] [UPLOAD] 开始处理文件上传 | {"filename":"2025å¹´5æååæ³ç§åç§2å¹´çº§å­¦åçè®ºèè¯-è¯å·.doc.docx","size":46610,"mimetype":"application/vnd.openxmlformats-officedocument.wordprocessingml.document"}
+[2025-06-21 16:29:11] [INFO] [APP] HTTP请求完成 | {"method":"POST","url":"/api/upload","statusCode":200,"duration":"1228ms"}
+[2025-06-21 16:29:13] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:29:13] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":200,"duration":"36ms"}
+[2025-06-21 16:39:13] [INFO] [APP] HTTP请求开始 | {"method":"POST","url":"/api/upload","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:39:13] [INFO] [UPLOAD] 开始处理文件上传 | {"filename":"2025å¹´5æååæ³ç§å¨ç§äºå¹´çº§å­¦ååºç§èæ ¸-è¯å·.doc.docx","size":47372,"mimetype":"application/vnd.openxmlformats-officedocument.wordprocessingml.document"}
+[2025-06-21 16:39:15] [INFO] [APP] HTTP请求完成 | {"method":"POST","url":"/api/upload","statusCode":200,"duration":"1461ms"}
+[2025-06-21 16:39:16] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:39:16] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":200,"duration":"22ms"}
+[2025-06-21 16:40:08] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-21T16:40:08.312Z"}
+[2025-06-21 16:40:08] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-21 16:40:08] [INFO] [DATABASE] 数据库创建完成
+[2025-06-21 16:40:08] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-21 16:40:08] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-21 16:40:08] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-21 16:41:58] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-21T16:41:58.205Z"}
+[2025-06-21 16:41:58] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-21 16:41:58] [INFO] [DATABASE] 数据库创建完成
+[2025-06-21 16:41:58] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-21 16:41:58] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-21 16:41:58] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-21 16:42:14] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:42:14] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 16:42:14] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":304,"duration":"45ms"}
+[2025-06-21 16:42:27] [INFO] [APP] HTTP请求开始 | {"method":"POST","url":"/api/auth/login","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:42:28] [INFO] [AUTH] 用户登录请求 | {"username":"admin"}
+[2025-06-21 16:42:28] [INFO] [APP] HTTP请求完成 | {"method":"POST","url":"/api/auth/login","statusCode":200,"duration":"133ms"}
+[2025-06-21 16:42:28] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:42:28] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":200,"duration":"18ms"}
+[2025-06-21 16:42:28] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/import-records","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:42:28] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/import-records","statusCode":200,"duration":"16ms"}
+[2025-06-21 16:42:34] [INFO] [APP] HTTP请求开始 | {"method":"POST","url":"/api/upload","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:42:34] [INFO] [UPLOAD] 开始处理文件上传 | {"filename":"2025å¹´5æååæ³ç§å¨ç§äºå¹´çº§å­¦ååºç§èæ ¸-è¯å·.doc.docx","size":47372,"mimetype":"application/vnd.openxmlformats-officedocument.wordprocessingml.document"}
+[2025-06-21 16:42:35] [INFO] [APP] HTTP请求完成 | {"method":"POST","url":"/api/upload","statusCode":200,"duration":"1104ms"}
+[2025-06-21 16:42:36] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:42:36] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":200,"duration":"19ms"}
+[2025-06-21 16:43:42] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:43:42] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"18ms"}
+[2025-06-21 16:43:53] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:43:53] [ERROR] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":401,"duration":"14ms"}
+[2025-06-21 16:43:53] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/favicon.ico","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:43:53] [ERROR] [APP] HTTP请求完成 | {"method":"GET","url":"/favicon.ico","statusCode":404,"duration":"14ms"}
+[2025-06-21 16:46:25] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:46:25] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"19ms"}
+[2025-06-21 16:53:23] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:53:23] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"20ms"}
+[2025-06-21 16:53:28] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:53:28] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"17ms"}
+[2025-06-21 16:53:35] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:53:35] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"16ms"}
+[2025-06-21 16:53:50] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:53:51] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"970ms"}
+[2025-06-21 16:54:22] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:54:25] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"2052ms"}
+[2025-06-21 16:54:25] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/import-records","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:54:25] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/import-records","statusCode":200,"duration":"21ms"}
+[2025-06-21 16:54:26] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:54:26] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"39ms"}
+[2025-06-21 16:54:26] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/import-records","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:54:26] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/import-records","statusCode":304,"duration":"31ms"}
+[2025-06-21 16:54:29] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:54:29] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"22ms"}
+[2025-06-21 16:54:50] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:54:50] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"19ms"}
+[2025-06-21 16:55:00] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-21T16:55:00.337Z"}
+[2025-06-21 16:55:00] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-21 16:55:00] [INFO] [DATABASE] 数据库创建完成
+[2025-06-21 16:55:00] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-21 16:55:00] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-21 16:55:00] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-21 16:55:14] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:55:14] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":200,"duration":"27ms"}
+[2025-06-21 16:55:18] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:55:18] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 16:55:18] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"29ms"}
+[2025-06-21 16:55:22] [INFO] [APP] HTTP请求开始 | {"method":"POST","url":"/api/practice/submit","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:55:22] [ERROR] [PRACTICE] 提交答案失败 | {"error":"Cannot read properties of undefined (reading 'toLowerCase')"}
+[2025-06-21 16:55:22] [ERROR] [APP] HTTP请求完成 | {"method":"POST","url":"/api/practice/submit","statusCode":500,"duration":"59ms"}
+[2025-06-21 16:55:34] [INFO] [APP] HTTP请求开始 | {"method":"POST","url":"/api/practice/submit","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:55:34] [ERROR] [PRACTICE] 提交答案失败 | {"error":"Cannot read properties of undefined (reading 'toLowerCase')"}
+[2025-06-21 16:55:34] [ERROR] [APP] HTTP请求完成 | {"method":"POST","url":"/api/practice/submit","statusCode":500,"duration":"40ms"}
+[2025-06-21 16:55:41] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:55:41] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"27ms"}
+[2025-06-21 16:56:18] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:56:18] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"35ms"}
+[2025-06-21 16:56:18] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/import-records","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:56:18] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/import-records","statusCode":304,"duration":"20ms"}
+[2025-06-21 16:56:33] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:56:33] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"22ms"}
+[2025-06-21 16:56:33] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/import-records","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:56:33] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/import-records","statusCode":304,"duration":"16ms"}
+[2025-06-21 16:58:10] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-21T16:58:10.768Z"}
+[2025-06-21 16:58:10] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-21 16:58:11] [INFO] [DATABASE] 数据库创建完成
+[2025-06-21 16:58:11] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-21 16:58:11] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-21 16:58:11] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-21 16:58:46] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/import-records","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:58:46] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/import-records","statusCode":304,"duration":"289ms"}
+[2025-06-21 16:59:34] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:59:34] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"22ms"}
+[2025-06-21 16:59:34] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/import-records","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 16:59:34] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/import-records","statusCode":304,"duration":"16ms"}
+[2025-06-21 17:05:07] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:05:10] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"2267ms"}
+[2025-06-21 17:05:10] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/import-records","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:05:10] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/import-records","statusCode":304,"duration":"15ms"}
+[2025-06-21 17:05:19] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:05:19] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"16ms"}
+[2025-06-21 17:05:20] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:05:20] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"22ms"}
+[2025-06-21 17:05:20] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/import-records","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:05:20] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/import-records","statusCode":304,"duration":"17ms"}
+[2025-06-21 17:09:09] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/import-records","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:09:09] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/import-records","statusCode":304,"duration":"16ms"}
+[2025-06-21 17:10:57] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/import-records","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:10:58] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/import-records","statusCode":304,"duration":"1095ms"}
+[2025-06-21 17:12:07] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/import-records","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:12:08] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/import-records","statusCode":304,"duration":"1065ms"}
+[2025-06-21 17:12:12] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:12:12] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"21ms"}
+[2025-06-21 17:12:12] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/import-records","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:12:12] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/import-records","statusCode":304,"duration":"14ms"}
+[2025-06-21 17:12:18] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:12:18] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"36ms"}
+[2025-06-21 17:13:08] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:13:08] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"17ms"}
+[2025-06-21 17:13:36] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:13:36] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"17ms"}
+[2025-06-21 17:13:42] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:13:42] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"20ms"}
+[2025-06-21 17:17:37] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:17:38] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"1020ms"}
+[2025-06-21 17:18:07] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:18:07] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"22ms"}
+[2025-06-21 17:18:22] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:18:22] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"18ms"}
+[2025-06-21 17:19:24] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:19:24] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"21ms"}
+[2025-06-21 17:19:29] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:19:29] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"16ms"}
+[2025-06-21 17:19:34] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:19:34] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"20ms"}
+[2025-06-21 17:19:41] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:19:41] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"19ms"}
+[2025-06-21 17:20:08] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-21T17:20:08.815Z"}
+[2025-06-21 17:20:08] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-21 17:20:08] [INFO] [DATABASE] 数据库创建完成
+[2025-06-21 17:20:08] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-21 17:20:08] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-21 17:20:08] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-21 17:20:33] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:20:33] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":304,"duration":"27ms"}
+[2025-06-21 17:20:39] [INFO] [APP] HTTP请求开始 | {"method":"PUT","url":"/api/questions/791","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:20:39] [INFO] [APP] HTTP请求完成 | {"method":"PUT","url":"/api/questions/791","statusCode":200,"duration":"37ms"}
+[2025-06-21 17:21:06] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/questions","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:21:07] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/questions","statusCode":200,"duration":"1107ms"}
+[2025-06-21 17:21:07] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/import-records","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:21:07] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/import-records","statusCode":304,"duration":"31ms"}
+[2025-06-21 17:21:08] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:21:08] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-21 17:21:08] [INFO] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":200,"duration":"37ms"}
+[2025-06-21 17:21:10] [INFO] [APP] HTTP请求开始 | {"method":"POST","url":"/api/practice/submit","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:21:10] [ERROR] [PRACTICE] 提交答案失败 | {"error":"Cannot read properties of undefined (reading 'toLowerCase')"}
+[2025-06-21 17:21:10] [ERROR] [APP] HTTP请求完成 | {"method":"POST","url":"/api/practice/submit","statusCode":500,"duration":"79ms"}
+[2025-06-21 17:21:13] [INFO] [APP] HTTP请求开始 | {"method":"POST","url":"/api/practice/submit","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:21:13] [ERROR] [PRACTICE] 提交答案失败 | {"error":"Cannot read properties of undefined (reading 'toLowerCase')"}
+[2025-06-21 17:21:13] [ERROR] [APP] HTTP请求完成 | {"method":"POST","url":"/api/practice/submit","statusCode":500,"duration":"44ms"}
+[2025-06-21 17:21:15] [INFO] [APP] HTTP请求开始 | {"method":"POST","url":"/api/practice/submit","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:21:15] [ERROR] [PRACTICE] 提交答案失败 | {"error":"Cannot read properties of undefined (reading 'toLowerCase')"}
+[2025-06-21 17:21:15] [ERROR] [APP] HTTP请求完成 | {"method":"POST","url":"/api/practice/submit","statusCode":500,"duration":"58ms"}
+[2025-06-21 17:21:18] [INFO] [APP] HTTP请求开始 | {"method":"POST","url":"/api/practice/submit","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:21:18] [ERROR] [PRACTICE] 提交答案失败 | {"error":"Cannot read properties of undefined (reading 'toLowerCase')"}
+[2025-06-21 17:21:18] [ERROR] [APP] HTTP请求完成 | {"method":"POST","url":"/api/practice/submit","statusCode":500,"duration":"31ms"}
+[2025-06-21 17:21:21] [INFO] [APP] HTTP请求开始 | {"method":"POST","url":"/api/practice/submit","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:21:21] [ERROR] [PRACTICE] 提交答案失败 | {"error":"Cannot read properties of undefined (reading 'toLowerCase')"}
+[2025-06-21 17:21:21] [ERROR] [APP] HTTP请求完成 | {"method":"POST","url":"/api/practice/submit","statusCode":500,"duration":"68ms"}
+[2025-06-21 17:21:23] [INFO] [APP] HTTP请求开始 | {"method":"POST","url":"/api/practice/submit","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:21:23] [ERROR] [PRACTICE] 提交答案失败 | {"error":"Cannot read properties of undefined (reading 'toLowerCase')"}
+[2025-06-21 17:21:23] [ERROR] [APP] HTTP请求完成 | {"method":"POST","url":"/api/practice/submit","statusCode":500,"duration":"39ms"}
+[2025-06-21 17:21:26] [INFO] [APP] HTTP请求开始 | {"method":"POST","url":"/api/practice/submit","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:21:26] [ERROR] [PRACTICE] 提交答案失败 | {"error":"Cannot read properties of undefined (reading 'toLowerCase')"}
+[2025-06-21 17:21:26] [ERROR] [APP] HTTP请求完成 | {"method":"POST","url":"/api/practice/submit","statusCode":500,"duration":"64ms"}
+[2025-06-21 17:21:28] [INFO] [APP] HTTP请求开始 | {"method":"POST","url":"/api/practice/submit","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:21:28] [ERROR] [PRACTICE] 提交答案失败 | {"error":"Cannot read properties of undefined (reading 'toLowerCase')"}
+[2025-06-21 17:21:28] [ERROR] [APP] HTTP请求完成 | {"method":"POST","url":"/api/practice/submit","statusCode":500,"duration":"42ms"}
+[2025-06-21 17:21:29] [INFO] [APP] HTTP请求开始 | {"method":"POST","url":"/api/practice/submit","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:21:29] [ERROR] [PRACTICE] 提交答案失败 | {"error":"Cannot read properties of undefined (reading 'toLowerCase')"}
+[2025-06-21 17:21:29] [ERROR] [APP] HTTP请求完成 | {"method":"POST","url":"/api/practice/submit","statusCode":500,"duration":"38ms"}
+[2025-06-21 17:21:31] [INFO] [APP] HTTP请求开始 | {"method":"POST","url":"/api/practice/submit","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-21 17:21:31] [ERROR] [PRACTICE] 提交答案失败 | {"error":"Cannot read properties of undefined (reading 'toLowerCase')"}
+[2025-06-21 17:21:31] [ERROR] [APP] HTTP请求完成 | {"method":"POST","url":"/api/practice/submit","statusCode":500,"duration":"85ms"}

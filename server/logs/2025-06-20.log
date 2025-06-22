@@ -1,0 +1,170 @@
+[2025-06-20 13:53:47] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-20T13:53:47.746Z"}
+[2025-06-20 13:53:47] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-20 13:53:47] [INFO] [DATABASE] 数据库创建完成
+[2025-06-20 13:53:48] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-20 13:53:48] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-20 13:53:48] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-20 13:59:38] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-20T13:59:38.295Z"}
+[2025-06-20 13:59:38] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-20 13:59:38] [INFO] [DATABASE] 数据库创建完成
+[2025-06-20 13:59:38] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-20 13:59:38] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-20 13:59:38] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-20 14:13:28] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-20T14:13:28.258Z"}
+[2025-06-20 14:13:30] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-20 14:13:30] [INFO] [DATABASE] 数据库创建完成
+[2025-06-20 14:13:30] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-20 14:13:30] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-20 14:13:30] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-20 14:13:52] [INFO] [APP] HTTP请求开始 | {"method":"POST","url":"/api/auth/login","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-20 14:13:52] [INFO] [AUTH] 用户登录请求 | {"username":"admin"}
+[2025-06-20 14:13:52] [INFO] [APP] HTTP请求完成 | {"method":"POST","url":"/api/auth/login","statusCode":200,"duration":"152ms"}
+[2025-06-20 14:26:30] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-20T14:26:30.304Z"}
+[2025-06-20 14:26:30] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-20 14:26:30] [INFO] [DATABASE] 数据库创建完成
+[2025-06-20 14:26:30] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-20 14:26:30] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-20 14:26:30] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-20 14:28:46] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-20T14:28:46.993Z"}
+[2025-06-20 14:28:47] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-20 14:28:47] [INFO] [DATABASE] 数据库创建完成
+[2025-06-20 14:28:47] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-20 14:28:47] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-20 14:28:47] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-20 14:29:28] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-20T14:29:28.130Z"}
+[2025-06-20 14:29:28] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-20 14:29:28] [INFO] [DATABASE] 数据库创建完成
+[2025-06-20 14:29:28] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-20 14:29:28] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-20 14:29:28] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-20 14:29:39] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-20T14:29:39.500Z"}
+[2025-06-20 14:29:39] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-20 14:29:39] [INFO] [DATABASE] 数据库创建完成
+[2025-06-20 14:29:39] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-20 14:29:39] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-20 14:29:39] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-20 14:32:58] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-20T14:32:58.301Z"}
+[2025-06-20 14:33:00] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-20 14:33:00] [INFO] [DATABASE] 数据库创建完成
+[2025-06-20 14:33:00] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-20 14:33:00] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-20 14:33:00] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-20 14:33:16] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-20T14:33:16.335Z"}
+[2025-06-20 14:33:16] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-20 14:33:16] [INFO] [DATABASE] 数据库创建完成
+[2025-06-20 14:33:16] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-20 14:33:16] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-20 14:33:16] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-20 14:33:19] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-20T14:33:19.334Z"}
+[2025-06-20 14:33:19] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-20 14:33:19] [INFO] [DATABASE] 数据库创建完成
+[2025-06-20 14:33:19] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-20 14:33:19] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-20 14:33:19] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-20 14:33:21] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-20T14:33:21.736Z"}
+[2025-06-20 14:33:21] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-20 14:33:21] [INFO] [DATABASE] 数据库创建完成
+[2025-06-20 14:33:21] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-20 14:33:21] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-20 14:33:21] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-20 14:33:22] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-20T14:33:22.479Z"}
+[2025-06-20 14:33:22] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-20 14:33:22] [INFO] [DATABASE] 数据库创建完成
+[2025-06-20 14:33:22] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-20 14:33:22] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-20 14:33:22] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-20 14:41:58] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-20T14:41:58.444Z"}
+[2025-06-20 14:41:58] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-20 14:41:58] [INFO] [DATABASE] 数据库创建完成
+[2025-06-20 14:41:58] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-20 14:41:58] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-20 14:41:58] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-20 17:16:02] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-20T17:16:02.573Z"}
+[2025-06-20 17:16:02] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-20 17:16:02] [INFO] [DATABASE] 数据库创建完成
+[2025-06-20 17:16:02] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-20 17:16:02] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-20 17:16:02] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-20 17:22:41] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-20T17:22:41.260Z"}
+[2025-06-20 17:22:41] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-20 17:22:41] [INFO] [DATABASE] 数据库创建完成
+[2025-06-20 17:22:41] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-20 17:22:41] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-20 17:22:41] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-20 17:22:46] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-20 17:22:46] [ERROR] [APP] HTTP请求完成 | {"method":"GET","url":"/","statusCode":404,"duration":"17ms"}
+[2025-06-20 17:27:40] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/?ide_webview_request_time=1750440460811","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.98.2 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36"}
+[2025-06-20 17:27:40] [ERROR] [APP] HTTP请求完成 | {"method":"GET","url":"/?ide_webview_request_time=1750440460811","statusCode":404,"duration":"14ms"}
+[2025-06-20 17:29:59] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-20T17:29:59.714Z"}
+[2025-06-20 17:29:59] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-20 17:29:59] [INFO] [DATABASE] 数据库创建完成
+[2025-06-20 17:30:01] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-20 17:30:01] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-20 17:30:01] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-20 17:36:53] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-20T17:36:53.020Z"}
+[2025-06-20 17:36:53] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-20 17:36:53] [INFO] [DATABASE] 数据库创建完成
+[2025-06-20 17:36:53] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-20 17:36:53] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-20 17:36:53] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-20 17:39:34] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/?ide_webview_request_time=1750441014072","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.98.2 Chrome/132.0.6834.196 Electron/34.2.0 Safari/537.36"}
+[2025-06-20 17:39:35] [ERROR] [APP] HTTP请求完成 | {"method":"GET","url":"/?ide_webview_request_time=1750441014072","statusCode":404,"duration":"1853ms"}
+[2025-06-20 17:41:04] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-20T17:41:04.316Z"}
+[2025-06-20 17:41:04] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-20 17:41:04] [INFO] [DATABASE] 数据库创建完成
+[2025-06-20 17:41:04] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-20 17:41:04] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-20 17:41:04] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-20 17:44:16] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-20T17:44:16.504Z"}
+[2025-06-20 17:44:16] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-20 17:44:18] [INFO] [DATABASE] 数据库创建完成
+[2025-06-20 17:44:18] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-20 17:44:18] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-20 17:44:18] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-20 17:47:40] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-20T17:47:40.631Z"}
+[2025-06-20 17:47:40] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-20 17:47:40] [INFO] [DATABASE] 数据库创建完成
+[2025-06-20 17:47:40] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-20 17:47:40] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-20 17:47:40] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-20 17:52:30] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-20T17:52:30.116Z"}
+[2025-06-20 17:52:30] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-20 17:52:30] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-20T17:52:30.860Z"}
+[2025-06-20 17:52:30] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-20 17:52:30] [INFO] [DATABASE] 数据库创建完成
+[2025-06-20 17:52:30] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-20 17:52:30] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-20 17:52:31] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-20 17:52:47] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-20T17:52:47.907Z"}
+[2025-06-20 17:52:47] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-20 17:52:48] [INFO] [DATABASE] 数据库创建完成
+[2025-06-20 17:52:48] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-20T17:52:48.688Z"}
+[2025-06-20 17:52:48] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-20 17:52:48] [INFO] [DATABASE] 数据库创建完成
+[2025-06-20 17:52:48] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-20 17:52:48] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-20 17:52:48] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-20 17:53:04] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-20T17:53:04.039Z"}
+[2025-06-20 17:53:04] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-20 17:53:04] [INFO] [DATABASE] 数据库创建完成
+[2025-06-20 17:53:04] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-20 17:53:04] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-20 17:53:04] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-20 17:53:04] [INFO] [APP] 服务器启动成功 | {"port":3000,"url":"http://localhost:3000","env":"development","timestamp":"2025-06-20T17:53:04.995Z"}
+[2025-06-20 17:53:05] [INFO] [DATABASE] 开始初始化数据库
+[2025-06-20 17:53:05] [INFO] [DATABASE] 数据库创建完成
+[2025-06-20 17:53:05] [INFO] [DATABASE] 微信二维码表创建完成
+[2025-06-20 17:53:05] [INFO] [DATABASE] 答题记录表创建完成
+[2025-06-20 17:53:05] [INFO] [DATABASE] 数据库初始化完成
+[2025-06-20 17:53:59] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-20 17:53:59] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-20 17:53:59] [ERROR] [PRACTICE] 获取随机题目失败 | {"error":"Incorrect arguments to mysqld_stmt_execute"}
+[2025-06-20 17:53:59] [ERROR] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":500,"duration":"92ms"}
+[2025-06-20 17:57:31] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-20 17:57:31] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-20 17:57:31] [ERROR] [PRACTICE] 获取随机题目失败 | {"error":"Incorrect arguments to mysqld_stmt_execute"}
+[2025-06-20 17:57:31] [ERROR] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":500,"duration":"55ms"}
+[2025-06-20 17:57:34] [INFO] [APP] HTTP请求开始 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","ip":"::1","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36"}
+[2025-06-20 17:57:34] [INFO] [PRACTICE] 获取随机题目 | {"count":"10","type":"all","exam_name":"all"}
+[2025-06-20 17:57:34] [ERROR] [PRACTICE] 获取随机题目失败 | {"error":"Incorrect arguments to mysqld_stmt_execute"}
+[2025-06-20 17:57:34] [ERROR] [APP] HTTP请求完成 | {"method":"GET","url":"/api/practice/random?count=10&type=all&exam_name=all","statusCode":500,"duration":"52ms"}
