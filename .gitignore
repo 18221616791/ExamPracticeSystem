@@ -11,6 +11,26 @@ yarn-error.log*
 .env
 .env.local
 .env.*.local
+.env.production
+.env.staging
+.env.development
+
+# SSH密钥和证书
+*.pem
+*.key
+Keygen
+Keygen.pub
+id_rsa*
+*.crt
+*.csr
+
+# 数据库文件
+*.sql
+*.db
+*.sqlite
+*.sqlite3
+mysql_data/
+data/
 
 # 日志文件
 *.log

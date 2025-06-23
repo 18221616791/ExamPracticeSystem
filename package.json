@@ -22,7 +22,15 @@
     "docker:logs": "docker-compose logs -f",
     "docker:dev": "docker-compose -f docker-compose.dev.yml up -d",
     "docker:dev:down": "docker-compose -f docker-compose.dev.yml down",
-    "docker:clean": "docker-compose down -v && docker system prune -f"
+    "docker:clean": "docker-compose down -v && docker system prune -f",
+    "webhook:start": "node webhook-deploy.js",
+    "webhook:dev": "nodemon webhook-deploy.js",
+    "webhook:install": "sudo cp webhook-deploy.service /etc/systemd/system/ && sudo systemctl daemon-reload",
+    "webhook:enable": "sudo systemctl enable webhook-deploy",
+    "webhook:start-service": "sudo systemctl start webhook-deploy",
+    "webhook:stop-service": "sudo systemctl stop webhook-deploy",
+    "webhook:status": "sudo systemctl status webhook-deploy",
+    "webhook:logs": "sudo journalctl -u webhook-deploy -f"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",

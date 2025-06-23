@@ -1,0 +1,150 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: test_password
+          MYSQL_DATABASE: question_bank_test
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: |
+        npm install
+        cd client && npm install
+    
+    - name: Build frontend
+      run: npm run build
+    
+    - name: Test backend
+      env:
+        DB_HOST: localhost
+        DB_PORT: 3306
+        DB_USER: root
+        DB_PASSWORD: ${{ secrets.TEST_DB_PASSWORD }}
+        DB_NAME: question_bank_test
+        JWT_SECRET: ${{ secrets.TEST_JWT_SECRET }}
+        NODE_ENV: test
+      run: |
+        # 这里可以添加后端测试命令
+        echo "Backend tests would run here"
+    
+    - name: Archive build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: build-files
+        path: |
+          client/dist/
+          server/
+          package*.json
+          docker-compose.yml
+          Dockerfile
+          nginx.conf
+          mysql-init/
+          deploy.sh
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    
+    steps:
+    - name: Download build artifacts
+      uses: actions/download-artifact@v3
+      with:
+        name: build-files
+        path: ./
+    
+    - name: Deploy to server
+      uses: appleboy/ssh-action@v0.1.7
+      with:
+        host: ${{ secrets.SERVER_HOST }}
+        username: ${{ secrets.SERVER_USER }}
+        key: ${{ secrets.SERVER_SSH_KEY }}
+        port: ${{ secrets.SERVER_PORT || 22 }}
+        script: |
+          # 创建项目目录
+          mkdir -p /opt/question-bank
+          cd /opt/question-bank
+          
+          # 备份当前版本（如果存在）
+          if [ -d "current" ]; then
+            mv current backup-$(date +%Y%m%d-%H%M%S)
+          fi
+          
+          # 创建新版本目录
+          mkdir -p current
+    
+    - name: Copy files to server
+      uses: appleboy/scp-action@v0.1.4
+      with:
+        host: ${{ secrets.SERVER_HOST }}
+        username: ${{ secrets.SERVER_USER }}
+        key: ${{ secrets.SERVER_SSH_KEY }}
+        port: ${{ secrets.SERVER_PORT || 22 }}
+        source: "*"
+        target: "/opt/question-bank/current/"
+        rm: false
+    
+    - name: Start services
+      uses: appleboy/ssh-action@v0.1.7
+      with:
+        host: ${{ secrets.SERVER_HOST }}
+        username: ${{ secrets.SERVER_USER }}
+        key: ${{ secrets.SERVER_SSH_KEY }}
+        port: ${{ secrets.SERVER_PORT || 22 }}
+        script: |
+          cd /opt/question-bank/current
+          
+          # 设置执行权限
+          chmod +x deploy.sh
+          chmod +x quick-start.sh
+          
+          # 创建环境变量文件（如果不存在）
+          if [ ! -f .env ]; then
+            cp .env.example .env
+            
+            # 设置生产环境变量
+            sed -i "s/DB_HOST=localhost/DB_HOST=mysql/g" .env
+            sed -i "s/DB_PASSWORD=your_secure_password/DB_PASSWORD=${{ secrets.DB_PASSWORD }}/g" .env
+            sed -i "s/JWT_SECRET=your_jwt_secret_key/JWT_SECRET=${{ secrets.JWT_SECRET }}/g" .env
+            sed -i "s/MYSQL_ROOT_PASSWORD=your_mysql_root_password/MYSQL_ROOT_PASSWORD=${{ secrets.DB_PASSWORD }}/g" .env
+          fi
+          
+          # 停止旧服务
+          docker-compose down || true
+          
+          # 启动新服务
+          docker-compose up -d
+          
+          # 等待服务启动
+          sleep 30
+          
+          # 检查服务状态
+          docker-compose ps
+          
+          # 健康检查
+          curl -f http://localhost/health || exit 1
+          
+          echo "Deployment completed successfully!"

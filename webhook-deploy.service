@@ -1,0 +1,36 @@
+[Unit]
+Description=Question Bank Webhook Deploy Service
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/question-bank/current
+ExecStart=/usr/bin/node webhook-deploy.js
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=webhook-deploy
+
+# 环境变量
+Environment=NODE_ENV=production
+Environment=WEBHOOK_PORT=3001
+Environment=WEBHOOK_SECRET=your-webhook-secret
+Environment=PROJECT_PATH=/opt/question-bank/current
+Environment=GIT_BRANCH=main
+
+# 安全设置
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/question-bank
+
+# 资源限制
+LimitNOFILE=65536
+LimitNPROC=4096
+
+[Install]
+WantedBy=multi-user.target
