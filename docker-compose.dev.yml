@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  # MySQL数据库服务（开发环境）
+  mysql-dev:
+    image: mysql:8.0
+    container_name: question-bank-mysql-dev
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root123456
+      MYSQL_DATABASE: question_bank
+      MYSQL_USER: app_user
+      MYSQL_PASSWORD: app_password
+    ports:
+      - "3307:3306"  # 避免与本地MySQL冲突
+    volumes:
+      - mysql_dev_data:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d
+    networks:
+      - question-bank-dev-network
+    command: --default-authentication-plugin=mysql_native_password
+
+  # 应用服务（开发环境）
+  app-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: question-bank-app-dev
+    restart: unless-stopped
+    ports:
+      - "3001:3000"  # 避免与本地开发服务器冲突
+    environment:
+      NODE_ENV: development
+      DB_HOST: mysql-dev
+      DB_PORT: 3306
+      DB_NAME: question_bank
+      DB_USER: app_user
+      DB_PASSWORD: app_password
+      JWT_SECRET: dev-jwt-secret-key
+    depends_on:
+      - mysql-dev
+    volumes:
+      - ./uploads:/app/uploads
+      - ./server/logs:/app/server/logs
+      - ./server:/app/server  # 开发时挂载源码
+    networks:
+      - question-bank-dev-network
+    command: npm run server  # 使用开发模式启动
+
+volumes:
+  mysql_dev_data:
+    driver: local
+
+networks:
+  question-bank-dev-network:
+    driver: bridge

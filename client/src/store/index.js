@@ -15,6 +15,7 @@ const store = createStore({
     // 刷题相关
     practiceQuestions: [],
     practiceStats: {
+      totalQuestions: 0,
       totalAnswered: 0,
       correctCount: 0,
       incorrectCount: 0,
@@ -172,12 +173,36 @@ const store = createStore({
     },
     
     // 获取刷题题目
-    async fetchPracticeQuestions({ commit }, { count = 10, type = 'all', exam_name = 'all' } = {}) {
+    async fetchPracticeQuestions({ commit }, { mode = 'random', count = 10, type = 'all', exam_name = 'all', ids = null } = {}) {
       try {
         commit('SET_LOADING', true)
-        const response = await axios.get('/api/practice/random', {
-          params: { count, type, exam_name }
-        })
+        let response
+        
+        if (mode === 'wrong' && ids) {
+          // 错题练习模式：获取指定的错题
+          response = await axios.get('/api/practice/questions-by-ids', {
+            params: { ids: ids.join(',') }
+          })
+        } else if (mode === 'wrong') {
+          // 错题练习模式：获取用户的错题
+          response = await axios.get('/api/practice/wrong-questions', {
+            params: { limit: count }
+          })
+          // 转换错题数据格式为练习题目格式
+          if (response.data.success && response.data.data.length > 0) {
+            const wrongQuestions = response.data.data
+            const questionIds = wrongQuestions.map(q => q.id)
+            response = await axios.get('/api/practice/questions-by-ids', {
+              params: { ids: questionIds.join(',') }
+            })
+          }
+        } else {
+          // 随机练习或顺序练习模式
+          response = await axios.get('/api/practice/random', {
+            params: { count, type, exam_name, mode }
+          })
+        }
+        
         const data = response.data.data || response.data
         commit('SET_PRACTICE_QUESTIONS', data)
         return { success: true, data: data }
@@ -198,13 +223,39 @@ const store = createStore({
         return { success: false, message: error.response?.data?.message || '获取统计失败' }
       }
     },
+
+    // 获取练习历史
+    async fetchPracticeHistory({ commit }, { page = 1, limit = 10 } = {}) {
+      try {
+        const response = await axios.get('/api/practice/history', {
+          params: { page, limit }
+        })
+        return { success: true, data: response.data.data, pagination: response.data.pagination }
+      } catch (error) {
+        return { success: false, message: error.response?.data?.message || '获取练习历史失败' }
+      }
+    },
+
+    // 获取错题列表
+    async fetchWrongQuestions({ commit }, { page = 1, limit = 20 } = {}) {
+      try {
+        const response = await axios.get('/api/practice/wrong-questions', {
+          params: { page, limit }
+        })
+        return { success: true, data: response.data.data, pagination: response.data.pagination }
+      } catch (error) {
+        return { success: false, message: error.response?.data?.message || '获取错题列表失败' }
+      }
+    },
     
     // 提交答案
-    async submitAnswer({ commit, state }, { questionId, selectedAnswer }) {
+    async submitAnswer({ commit, state }, { questionId, selectedAnswer, timeSpent, isCorrect }) {
       try {
         const response = await axios.post('/api/practice/submit', {
           questionId,
-          selectedAnswer
+          selectedAnswer,
+          timeSpent,
+          isCorrect
         })
         
         // 更新统计数据

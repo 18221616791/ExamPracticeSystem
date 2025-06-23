@@ -64,10 +64,11 @@ const upload = multer({ storage: storage });
 
 // MySQL数据库连接配置
 const dbConfig = {
-  host: 'localhost',
-  user: 'root',
-  password: 'Pass@word1', // 请修改为您的MySQL密码
-  database: 'question_bank',
+  host: process.env.DB_HOST || 'localhost',
+  port: process.env.DB_PORT || 3306,
+  user: process.env.DB_USER || 'root',
+  password: process.env.DB_PASSWORD || 'Pass@word1',
+  database: process.env.DB_NAME || 'question_bank',
   charset: 'utf8mb4',
   supportBigNumbers: true,
   bigNumberStrings: true,
@@ -297,7 +298,55 @@ function parseQuestions(text, examName) {
       if (currentQuestion) {
         const answerMatch = line.match(/[答案：:](.*)/i);
         if (answerMatch) {
-          currentQuestion.correct_answer = answerMatch[1].trim();
+          let answerText = answerMatch[1].trim();
+          
+          // 检查是否包含"答案详解"分隔符
+          if (answerText.includes('答案详解')) {
+            const parts = answerText.split('答案详解');
+            const answerPart = parts[0].trim();
+            const explanationPart = parts[1] ? parts[1].trim() : '';
+            
+            // 从答案部分提取答案标号
+            const answerMatch = answerPart.match(/([A-E])[、.]?/i);
+            if (answerMatch) {
+              currentQuestion.correct_answer = answerMatch[1].toUpperCase();
+            }
+            
+            // 从解析部分提取解析内容
+            if (explanationPart) {
+              const expMatch = explanationPart.match(/[：:]?解析[：:](.*)/i);
+              if (expMatch) {
+                currentQuestion.explanation = expMatch[1].trim();
+              } else if (explanationPart.startsWith('：解析：')) {
+                currentQuestion.explanation = explanationPart.substring(4).trim();
+              }
+            }
+          }
+          // 检查其他解析模式
+           else {
+             // 检查是否包含解析
+             if (answerText.includes('解析')) {
+               const explanationPattern = /([A-E]).*?解析[：:](.*)/i;
+               const match = answerText.match(explanationPattern);
+               if (match) {
+                 currentQuestion.correct_answer = match[1].toUpperCase();
+                 currentQuestion.explanation = match[2].trim();
+               }
+             } else {
+               // 简单答案格式
+               const simpleAnswerMatch = answerText.match(/^([A-E])[、.]?/);
+               if (simpleAnswerMatch) {
+                 currentQuestion.correct_answer = simpleAnswerMatch[1].toUpperCase();
+                 // 如果答案后面还有内容，可能是解析
+                 const remainingText = answerText.substring(simpleAnswerMatch[0].length).trim();
+                 if (remainingText && remainingText.length > 3) {
+                   currentQuestion.explanation = remainingText;
+                 }
+               } else {
+                 currentQuestion.correct_answer = answerText;
+               }
+             }
+           }
         }
       }
     }
@@ -306,7 +355,13 @@ function parseQuestions(text, examName) {
       if (currentQuestion) {
         const explanationMatch = line.match(/[解析解释：:](.*)/i);
         if (explanationMatch) {
-          currentQuestion.explanation = explanationMatch[1].trim();
+          // 如果已经有解析内容，追加；否则设置新的解析
+          const newExplanation = explanationMatch[1].trim();
+          if (currentQuestion.explanation) {
+            currentQuestion.explanation += ' ' + newExplanation;
+          } else {
+            currentQuestion.explanation = newExplanation;
+          }
         }
       }
     }
@@ -423,7 +478,6 @@ app.get('/api/questions', authenticateToken, requireRole(['admin']), async (req,
 
 // 刷题模块 - 获取随机题目（所有角色可访问）
 app.get('/api/practice/random', allowPractice, async (req, res) => {
-  const practiceLogger = new Logger('PRACTICE');
   try {
     const { count = 10, type, exam_name } = req.query;
     
@@ -448,7 +502,7 @@ app.get('/api/practice/random', allowPractice, async (req, res) => {
     const limitCount = Math.max(1, Math.min(100, parseInt(count) || 10));
     sql += ` ORDER BY RAND() LIMIT ${limitCount}`;
     
-    practiceLogger.info('获取随机题目', { count, type, exam_name });
+    logger.info('获取随机题目', { count, type, exam_name });
     
     const [rows] = await pool.execute(sql, params);
     // 为每个题目添加options字段
@@ -463,7 +517,7 @@ app.get('/api/practice/random', allowPractice, async (req, res) => {
     });
     res.json({ success: true, data: processedRows });
   } catch (error) {
-    practiceLogger.error('获取随机题目失败', { error: error.message });
+    logger.error('获取随机题目失败', { error: error.message });
     res.status(500).json({ success: false, message: error.message });
   }
 });
@@ -493,10 +547,20 @@ app.get('/api/practice/categories', allowPractice, async (req, res) => {
 
 // 刷题模块 - 提交答案（所有角色可访问）
 app.post('/api/practice/submit', allowPractice, async (req, res) => {
-  const practiceLogger = new Logger('PRACTICE');
   try {
     const { questionId, selectedAnswer, timeSpent } = req.body;
     const userId = req.user.id;
+    
+    // 参数验证
+    if (!questionId) {
+      return res.status(400).json({ success: false, message: '题目ID不能为空' });
+    }
+    if (selectedAnswer === undefined || selectedAnswer === null) {
+      return res.status(400).json({ success: false, message: '答案不能为空' });
+    }
+    if (timeSpent === undefined || timeSpent === null) {
+      return res.status(400).json({ success: false, message: '答题时间不能为空' });
+    }
     
     // 访客用户不记录答题记录，但仍返回正确答案
     if (!userId) {
@@ -510,7 +574,8 @@ app.post('/api/practice/submit', allowPractice, async (req, res) => {
       }
       
       const question = questions[0];
-      const isCorrect = selectedAnswer === question.correct_answer;
+      const isCorrect = selectedAnswer && question.correct_answer && 
+                       selectedAnswer.toLowerCase() === question.correct_answer.toLowerCase();
       
       return res.json({
         success: true,
@@ -533,21 +598,23 @@ app.post('/api/practice/submit', allowPractice, async (req, res) => {
     }
     
     const question = questions[0];
-    const isCorrect = selectedAnswer.toLowerCase() === question.correct_answer.toLowerCase();
+    const isCorrect = selectedAnswer && question.correct_answer && 
+                     selectedAnswer.toLowerCase() === question.correct_answer.toLowerCase();
     
     // 记录答题历史
+    const finalTimeSpent = timeSpent || 0; // 确保timeSpent不为undefined
     await pool.execute(
       'INSERT INTO practice_records (user_id, question_id, user_answer, correct_answer, is_correct, time_spent) VALUES (?, ?, ?, ?, ?, ?)',
-      [userId, questionId, selectedAnswer, question.correct_answer, isCorrect, timeSpent]
+      [userId, questionId, selectedAnswer || '', question.correct_answer, isCorrect, finalTimeSpent]
     );
     
-    practiceLogger.info('用户答题', {
+    logger.info('用户答题', {
       userId,
       questionId,
+      selectedAnswer,
       isCorrect,
       timeSpent
-    });
-    
+    });  
     res.json({
       success: true,
       data: {
@@ -557,7 +624,7 @@ app.post('/api/practice/submit', allowPractice, async (req, res) => {
       }
     });
   } catch (error) {
-    practiceLogger.error('提交答案失败', { error: error.message });
+    logger.error('提交答案失败', { error: error.message });
     res.status(500).json({ success: false, message: error.message });
   }
 });
@@ -582,12 +649,12 @@ app.get('/api/practice/stats', allowPractice, async (req, res) => {
     }
     
     const [totalStats] = await pool.execute(
-      'SELECT COUNT(*) as total, SUM(is_correct) as correct FROM practice_records WHERE user_id = ?',
+      'SELECT COUNT(*) as total, SUM(CAST(is_correct AS UNSIGNED)) as correct FROM practice_records WHERE user_id = ?',
       [userId]
     );
     
     const [typeStats] = await pool.execute(
-      `SELECT q.question_type, COUNT(*) as total, SUM(pr.is_correct) as correct 
+      `SELECT q.question_type, COUNT(*) as total, SUM(CAST(pr.is_correct AS UNSIGNED)) as correct 
        FROM practice_records pr 
        JOIN questions q ON pr.question_id = q.id 
        WHERE pr.user_id = ? 
@@ -605,16 +672,154 @@ app.get('/api/practice/stats', allowPractice, async (req, res) => {
       [userId]
     );
     
+    const total = totalStats[0].total || 0;
+    const correct = totalStats[0].correct || 0;
+    const accuracy = total > 0 ? Math.round((correct / total) * 100) : 0;
+    
     res.json({
       success: true,
       data: {
-        total: totalStats[0],
-        byType: typeStats,
-        recent: recentRecords
+        totalQuestions: total,
+        correctAnswers: correct,
+        totalAnswered: total,
+        correctCount: correct,
+        incorrectCount: total - correct,
+        accuracy: accuracy,
+        categoryStats: typeStats,
+        recentActivity: recentRecords
       }
     });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
+  }
+});
+
+// 获取练习历史记录
+app.get('/api/practice/history', authenticateToken, async (req, res) => {
+  try {
+    const userId = parseInt(req.user.id);
+    const page = Math.max(1, parseInt(req.query.page) || 1);
+    const limit = Math.max(1, Math.min(100, parseInt(req.query.limit) || 20));
+    const offset = (page - 1) * limit;
+    
+    // 验证userId是否有效
+    if (!userId || isNaN(userId)) {
+      return res.status(400).json({ success: false, message: '无效的用户ID' });
+    }
+    
+    // 获取练习会话统计
+    const [sessions] = await pool.execute(
+      `SELECT 
+        DATE(created_at) as practice_date,
+        COUNT(*) as total_questions,
+        SUM(CAST(is_correct AS UNSIGNED)) as correct_count,
+        COUNT(*) - SUM(CAST(is_correct AS UNSIGNED)) as wrong_count,
+        ROUND(AVG(CAST(is_correct AS UNSIGNED)) * 100, 1) as accuracy,
+        SUM(time_spent) as total_time,
+        MIN(created_at) as session_start
+       FROM practice_records 
+       WHERE user_id = ? 
+       GROUP BY DATE(created_at)
+       ORDER BY practice_date DESC
+       LIMIT ${limit} OFFSET ${offset}`,
+      [userId]
+    );
+    
+    // 为每个会话添加会话ID（基于日期排序）
+    const sessionsWithId = sessions.map((session, index) => ({
+      ...session,
+      id: `session_${session.practice_date}`,
+      sessionId: offset + index + 1,
+      createdAt: session.session_start
+    }));
+    
+    res.json({
+      success: true,
+      data: sessionsWithId
+    });
+  } catch (error) {
+    logger.error('获取练习历史失败', { error: error.message });
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
+// 获取错题集
+app.get('/api/practice/wrong-questions', authenticateToken, async (req, res) => {
+  try {
+    const userId = parseInt(req.user.id);
+    const page = Math.max(1, parseInt(req.query.page) || 1);
+    const limit = Math.max(1, Math.min(100, parseInt(req.query.limit) || 50));
+    const offset = (page - 1) * limit;
+    
+    // 验证userId是否有效
+    if (!userId || isNaN(userId)) {
+      return res.status(400).json({ success: false, message: '无效的用户ID' });
+    }
+    
+    // 获取用户的错题
+    const [wrongQuestions] = await pool.execute(
+      `SELECT 
+        q.id,
+        q.question_text as question,
+        q.question_type as type,
+        q.correct_answer,
+        COUNT(pr.id) as wrong_count,
+        MAX(pr.created_at) as last_wrong_at
+       FROM questions q
+       JOIN practice_records pr ON q.id = pr.question_id
+       WHERE pr.user_id = ? AND pr.is_correct = FALSE
+       GROUP BY q.id, q.question_text, q.question_type, q.correct_answer
+       ORDER BY last_wrong_at DESC
+       LIMIT ${limit} OFFSET ${offset}`,
+      [userId]
+    );
+    
+    res.json({
+      success: true,
+      data: wrongQuestions
+    });
+  } catch (error) {
+    logger.error('获取错题集失败', { error: error.message });
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
+// 根据题目ID获取题目详情
+app.get('/api/practice/questions-by-ids', async (req, res) => {
+  try {
+    const ids = req.query.ids;
+    if (!ids) {
+      return res.status(400).json({ success: false, message: '缺少题目ID参数' });
+    }
+    
+    const idArray = ids.split(',').map(id => parseInt(id)).filter(id => !isNaN(id));
+    if (idArray.length === 0) {
+      return res.status(400).json({ success: false, message: '无效的题目ID' });
+    }
+    
+    const placeholders = idArray.map(() => '?').join(',');
+    const query = `SELECT * FROM questions WHERE id IN (${placeholders})`;
+    
+    const [rows] = await pool.execute(query, idArray);
+    
+    // 处理选择题的选项
+    const processedQuestions = rows.map(question => {
+      const options = [];
+      if (question.option_a) options.push(question.option_a);
+      if (question.option_b) options.push(question.option_b);
+      if (question.option_c) options.push(question.option_c);
+      if (question.option_d) options.push(question.option_d);
+      if (question.option_e) options.push(question.option_e);
+      return { ...question, options };
+    });
+    
+    res.json({
+      success: true,
+      data: processedQuestions
+    });
+  } catch (error) {
+    logger.error('根据ID获取题目失败:', error);
+    res.status(500).json({ success: false, message: '获取题目失败' });
   }
 });
 
@@ -1121,6 +1326,16 @@ app.delete('/api/questions/:id', authenticateToken, requireRole(['admin']), asyn
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
+});
+
+// 健康检查端点
+app.get('/health', (req, res) => {
+  res.status(200).json({
+    status: 'ok',
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+    environment: process.env.NODE_ENV || 'development'
+  });
 });
 
 // 启动服务器

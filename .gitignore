@@ -1,0 +1,82 @@
+node_modules
+# 依赖目录
+node_modules/
+client/node_modules/
+server/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 环境配置文件
+.env
+.env.local
+.env.*.local
+
+# 日志文件
+*.log
+server/logs/
+logs/
+
+# 运行时文件
+uploads/
+*.pid
+*.seed
+*.pid.lock
+
+# 构建输出
+client/dist/
+build/
+
+# 缓存目录
+.npm
+.eslintcache
+.cache/
+.parcel-cache/
+
+# IDE和编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# 临时文件
+.tmp/
+temp/
+*.tmp
+*.temp
+
+# 测试覆盖率
+coverage/
+.nyc_output/
+
+# Docker相关（可选保留）
+# .dockerignore
+# Dockerfile
+# docker-compose*.yml
+
+# 数据库文件
+*.sqlite
+*.db
+
+# 压缩文件
+*.zip
+*.tar.gz
+*.rar
+
+# 系统文件
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# 备份文件
+*.bak
+*.backup
+*.old
+
+# 包管理器锁文件（可选）
+# package-lock.json
+# yarn.lock

@@ -2,7 +2,7 @@
   <div class="page-container">
     <van-nav-bar title="刷题练习" left-arrow @click-left="handleBack">
       <template #right>
-        <van-icon name="bar-chart-o" @click="$router.push('/practice-stats')" />
+        <van-icon name="bar-chart-o" @click="$router.push('/practice/stats')" />
       </template>
     </van-nav-bar>
     
@@ -86,6 +86,10 @@
         <div class="question-container">
           <div class="question-header">
             <span class="question-number">#{{ currentQuestion.id }}</span>
+            <div class="timer-display">
+              <van-icon name="clock-o" />
+              <span class="timer-text">{{ formatTime(currentQuestionTime) }}</span>
+            </div>
           </div>
           
           <div class="question-content">
@@ -98,11 +102,11 @@
                 :key="index"
                 class="option-item"
                 :class="{
-                  'selected': selectedAnswer === option,
+                  'selected': selectedAnswer === ['A', 'B', 'C', 'D', 'E'][index],
                   'correct': showResult && option === currentQuestion.correct_answer,
-                  'wrong': showResult && selectedAnswer === option && option !== currentQuestion.correct_answer
+                  'wrong': showResult && selectedAnswer === ['A', 'B', 'C', 'D', 'E'][index] && option !== currentQuestion.correct_answer
                 }"
-                @click="selectAnswer(option)"
+                @click="selectAnswer(option, index)"
               >
                 <span class="option-label">{{ ['A', 'B', 'C', 'D', 'E'][index] }}</span>
                 <span class="option-text">{{ option }}</span>
@@ -116,15 +120,15 @@
                 :key="index"
                 class="option-item multiple"
                 :class="{
-                  'selected': selectedAnswers.includes(option),
+                  'selected': selectedAnswers.includes(['A', 'B', 'C', 'D', 'E'][index]),
                   'correct': showResult && currentQuestion.correct_answer.includes(option),
-                  'wrong': showResult && selectedAnswers.includes(option) && !currentQuestion.correct_answer.includes(option)
+                  'wrong': showResult && selectedAnswers.includes(['A', 'B', 'C', 'D', 'E'][index]) && !currentQuestion.correct_answer.includes(option)
                 }"
-                @click="selectMultipleAnswer(option)"
+                @click="selectMultipleAnswer(option, index)"
               >
                 <span class="option-label">{{ ['A', 'B', 'C', 'D', 'E'][index] }}</span>
                 <span class="option-text">{{ option }}</span>
-                <van-checkbox :model-value="selectedAnswers.includes(option)" />
+                <van-checkbox :model-value="selectedAnswers.includes(['A', 'B', 'C', 'D', 'E'][index])" />
               </div>
             </div>
             
@@ -255,6 +259,11 @@
               <div class="stat-value">{{ practiceResult.accuracy }}%</div>
               <div class="stat-label">正确率</div>
             </div>
+            
+            <div class="stat-item">
+              <div class="stat-value">{{ formatTime(practiceResult.totalTime || 0) }}</div>
+              <div class="stat-label">总用时</div>
+            </div>
           </div>
           
           <div class="result-actions">
@@ -299,10 +308,10 @@
 </template>
 
 <script>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useStore } from 'vuex'
-import { useRouter } from 'vue-router'
-import { showToast, Dialog } from 'vant'
+import { useRouter, useRoute } from 'vue-router'
+import { showToast, showConfirmDialog } from 'vant'
 import logger from '../utils/logger'
 
 export default {
@@ -310,6 +319,7 @@ export default {
   setup() {
     const store = useStore()
     const router = useRouter()
+    const route = useRoute()
     
     const loading = ref(false)
     const practiceStarted = ref(false)
@@ -324,6 +334,24 @@ export default {
     const showResult = ref(false)
     const practiceResult = ref(null)
     const userAnswers = ref([])
+    const questionStartTime = ref(null) // 题目开始时间
+    const totalTimeSpent = ref(0) // 总答题时间（秒）
+    const currentTime = ref(Date.now()) // 当前时间，用于实时更新计时器
+    
+    // 定时器更新当前时间
+    let timer = null
+    const startTimer = () => {
+      timer = setInterval(() => {
+        currentTime.value = Date.now()
+      }, 1000)
+    }
+    
+    const stopTimer = () => {
+      if (timer) {
+        clearInterval(timer)
+        timer = null
+      }
+    }
     
     const currentQuestion = computed(() => {
       if (practiceQuestions.value.length > 0 && currentQuestionIndex.value < practiceQuestions.value.length) {
@@ -338,6 +366,19 @@ export default {
       if (practiceQuestions.value.length === 0) return 0
       return Math.round(((currentQuestionIndex.value + 1) / practiceQuestions.value.length) * 100)
     })
+    
+    // 当前题目已用时间（秒）
+    const currentQuestionTime = computed(() => {
+      if (!questionStartTime.value) return 0
+      return Math.floor((currentTime.value - questionStartTime.value) / 1000)
+    })
+    
+    // 格式化时间显示（mm:ss）
+    const formatTime = (seconds) => {
+      const mins = Math.floor(seconds / 60)
+      const secs = seconds % 60
+      return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
+    }
     
     // 判断是否可以提交答案
     const canSubmit = computed(() => {
@@ -360,25 +401,46 @@ export default {
     
     // 开始练习
     const startPractice = async () => {
-      if (!questionCount.value || questionCount.value <= 0) {
+      if (practiceMode.value !== 'wrong' && (!questionCount.value || questionCount.value <= 0)) {
         showToast('请输入有效的题目数量')
         return
       }
       
       loading.value = true
       try {
-        const result = await store.dispatch('fetchPracticeQuestions', {
+        const params = {
           mode: practiceMode.value,
-          count: parseInt(questionCount.value)
-        })    
+          count: parseInt(questionCount.value || 10)
+        }
+        
+        // 如果是错题练习模式
+        if (practiceMode.value === 'wrong') {
+          // 检查是否有指定的错题ID列表
+          const wrongIds = route.query.ids
+          if (wrongIds) {
+            params.ids = wrongIds.split(',').map(id => parseInt(id))
+          } else {
+            params.count = 50 // 默认获取最近50道错题
+          }
+        }
+        
+        const result = await store.dispatch('fetchPracticeQuestions', params)    
         if (result.success && result.data.length > 0) {
           practiceQuestions.value = result.data
           practiceStarted.value = true
           currentQuestionIndex.value = 0
           userAnswers.value = []
-          logger.info('开始练习', { mode: practiceMode.value, count: questionCount.value })
+          totalTimeSpent.value = 0
+          // 开始第一道题的计时
+          questionStartTime.value = Date.now()
+          startTimer() // 启动计时器
+          logger.info('开始练习', { mode: practiceMode.value, count: result.data.length })
         } else {
-          showToast(result.message || '获取练习题目失败')
+          if (practiceMode.value === 'wrong') {
+            showToast('暂无错题，请先进行其他练习')
+          } else {
+            showToast(result.message || '获取练习题目失败')
+          }
         }
       } catch (error) {
         showToast('获取练习题目失败')
@@ -389,19 +451,26 @@ export default {
     }
     
     // 选择答案
-    const selectAnswer = (answer) => {
+    const selectAnswer = (answer, index) => {
       if (showResult.value) return
-      selectedAnswer.value = answer
+      // 对于选择题，存储选项标号（A、B、C、D等）
+      if (currentQuestion.value.question_type === 'single') {
+        selectedAnswer.value = ['A', 'B', 'C', 'D', 'E'][index]
+      } else {
+        // 判断题仍然存储文本
+        selectedAnswer.value = answer
+      }
     }
     
     // 多选题选择答案
-    const selectMultipleAnswer = (answer) => {
+    const selectMultipleAnswer = (answer, index) => {
       if (showResult.value) return
-      const index = selectedAnswers.value.indexOf(answer)
-      if (index > -1) {
-        selectedAnswers.value.splice(index, 1)
+      const optionLabel = ['A', 'B', 'C', 'D', 'E'][index]
+      const labelIndex = selectedAnswers.value.indexOf(optionLabel)
+      if (labelIndex > -1) {
+        selectedAnswers.value.splice(labelIndex, 1)
       } else {
-        selectedAnswers.value.push(answer)
+        selectedAnswers.value.push(optionLabel)
       }
     }
     
@@ -414,17 +483,28 @@ export default {
       const correctAnswer = currentQuestion.value.correct_answer
       
       // 根据题型获取用户答案并判断正确性
-      if (questionType === 'single' || questionType === 'judge') {
+      if (questionType === 'single') {
+        if (!selectedAnswer.value) return
+        userAnswer = selectedAnswer.value
+        // 单选题：将正确答案文本转换为对应的标号进行比较
+        const correctIndex = currentQuestion.value.options.indexOf(correctAnswer)
+        const correctLabel = correctIndex !== -1 ? ['A', 'B', 'C', 'D', 'E'][correctIndex] : ''
+        isCorrect = selectedAnswer.value === correctLabel
+      } else if (questionType === 'judge') {
         if (!selectedAnswer.value) return
         userAnswer = selectedAnswer.value
         isCorrect = selectedAnswer.value === correctAnswer
       } else if (questionType === 'multiple') {
         if (selectedAnswers.value.length === 0) return
         userAnswer = selectedAnswers.value.join(',')
-        // 多选题需要比较选项数组
+        // 多选题：将正确答案文本转换为对应的标号进行比较
         const correctOptions = correctAnswer.split(',')
-        isCorrect = selectedAnswers.value.length === correctOptions.length && 
-                   selectedAnswers.value.every(answer => correctOptions.includes(answer))
+        const correctLabels = correctOptions.map(option => {
+          const index = currentQuestion.value.options.indexOf(option)
+          return index !== -1 ? ['A', 'B', 'C', 'D', 'E'][index] : ''
+        }).filter(label => label !== '')
+        isCorrect = selectedAnswers.value.length === correctLabels.length && 
+                   selectedAnswers.value.every(answer => correctLabels.includes(answer))
       } else if (questionType === 'fill') {
         if (!fillAnswer.value.trim()) return
         userAnswer = fillAnswer.value.trim()
@@ -436,20 +516,27 @@ export default {
         isCorrect = false
       }
       
+      // 计算答题时间
+      const currentTime = Date.now()
+      const timeSpent = questionStartTime.value ? Math.round((currentTime - questionStartTime.value) / 1000) : 0
+      totalTimeSpent.value += timeSpent
+      
       // 记录用户答案
       userAnswers.value.push({
         questionId: currentQuestion.value.id,
         userAnswer: userAnswer,
         correctAnswer: correctAnswer,
-        isCorrect
+        isCorrect: isCorrect,
+        timeSpent: timeSpent
       })
       
       // 提交答案到后端
       try {
         await store.dispatch('submitAnswer', {
           questionId: currentQuestion.value.id,
-          answer: userAnswer,
-          isCorrect
+          selectedAnswer: userAnswer,
+          timeSpent: timeSpent,
+          isCorrect: isCorrect
         })
       } catch (error) {
         logger.error('提交答案失败', error)
@@ -466,10 +553,14 @@ export default {
       fillAnswer.value = ''
       essayAnswer.value = ''
       showResult.value = false
+      // 重置计时器
+      questionStartTime.value = Date.now()
     }
     
     // 完成练习
     const finishPractice = () => {
+      stopTimer() // 停止计时器
+      
       const correctCount = userAnswers.value.filter(answer => answer.isCorrect).length
       const wrongCount = userAnswers.value.length - correctCount
       const accuracy = Math.round((correctCount / userAnswers.value.length) * 100)
@@ -478,7 +569,8 @@ export default {
         totalQuestions: userAnswers.value.length,
         correctCount,
         wrongCount,
-        accuracy
+        accuracy,
+        totalTime: totalTimeSpent.value
       }
       
       practiceStarted.value = false
@@ -487,6 +579,8 @@ export default {
     
     // 重新开始练习
     const restartPractice = () => {
+      stopTimer() // 停止计时器
+      
       practiceResult.value = null
       practiceStarted.value = false
       currentQuestionIndex.value = 0
@@ -494,18 +588,21 @@ export default {
       showResult.value = false
       userAnswers.value = []
       practiceQuestions.value = []
+      // 重置计时相关变量
+      questionStartTime.value = null
+      totalTimeSpent.value = 0
     }
     
     // 查看统计
     const viewStats = () => {
-      router.push('/practice-stats')
+      router.push('/practice/stats')
     }
     
     // 处理返回
     const handleBack = async () => {
       if (practiceStarted.value && !practiceResult.value) {
         try {
-          await Dialog.confirm({
+          await showConfirmDialog({
             title: '确认退出',
             message: '练习尚未完成，确定要退出吗？进度将不会保存。'
           })
@@ -519,7 +616,19 @@ export default {
     }
     
     onMounted(() => {
-      // 页面加载时可以获取一些统计信息
+      // 检查URL参数，如果是错题练习模式则自动设置
+      if (route.query.type === 'wrong') {
+        practiceMode.value = 'wrong'
+        // 如果有错题ID列表，自动开始练习
+        if (route.query.ids) {
+          startPractice()
+        }
+      }
+    })
+    
+    onUnmounted(() => {
+      // 组件销毁时清理定时器
+      stopTimer()
     })
     
     return {
@@ -537,6 +646,8 @@ export default {
       showResult,
       practiceResult,
       progressPercentage,
+      currentQuestionTime,
+      formatTime,
       canSubmit,
       startPractice,
       selectAnswer,
@@ -622,12 +733,28 @@ export default {
   padding: 16px;
   background: #f7f8fa;
   border-bottom: 1px solid #ebedf0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .question-number {
   font-size: 14px;
   color: #646566;
   font-weight: 500;
+}
+
+.timer-display {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #1989fa;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.timer-text {
+  font-family: 'Courier New', monospace;
 }
 
 .question-content {

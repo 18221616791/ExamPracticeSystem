@@ -179,13 +179,9 @@ export default {
     const handleWechatLogin = async () => {
       wechatLoading.value = true
       try {
-        // 获取微信登录二维码
-        const response = await store._vm.$http.get('/api/wechat/qrcode')
-        qrCodeUrl.value = response.data.qrCodeUrl
-        showQrCode.value = true
-        
-        // 开始轮询检查登录状态
-        pollWechatLogin(response.data.scene)
+        // 微信登录功能暂未实现
+        Toast.fail('微信登录功能暂未实现')
+        logger.warn('微信登录功能暂未实现')
       } catch (error) {
         showToast('获取二维码失败')
         logger.error('获取微信二维码失败', error)
@@ -194,44 +190,10 @@ export default {
       }
     }
     
-    // 轮询微信登录状态
+    // 轮询微信登录状态（暂未实现）
     const pollWechatLogin = (scene) => {
-      const pollInterval = setInterval(async () => {
-        try {
-          const response = await store._vm.$http.get(`/api/wechat/check/${scene}`)
-          
-          if (response.data.success) {
-            clearInterval(pollInterval)
-            showQrCode.value = false
-            
-            // 保存用户信息和token
-            store.commit('SET_TOKEN', response.data.token)
-            store.commit('SET_USER', response.data.user)
-            
-            showToast('微信登录成功')
-            logger.info('微信登录成功', response.data.user)
-            
-            // 根据用户角色跳转
-            if (response.data.user.role === 'admin') {
-              router.push('/')
-            } else {
-              router.push('/practice')
-            }
-          }
-        } catch (error) {
-          if (error.response?.status !== 404) {
-            clearInterval(pollInterval)
-            showQrCode.value = false
-            showToast('微信登录失败')
-            logger.error('微信登录检查失败', error)
-          }
-        }
-      }, 2000)
-      
-      // 2分钟后停止轮询
-      setTimeout(() => {
-        clearInterval(pollInterval)
-      }, 120000)
+      // 微信登录功能暂未实现
+      logger.warn('微信登录轮询功能暂未实现', scene)
     }
     
     // 访客模式

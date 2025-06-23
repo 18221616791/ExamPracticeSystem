@@ -79,7 +79,7 @@
 import { ref, computed, onMounted } from 'vue'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
-import { Toast, Dialog } from 'vant'
+import { Toast, showConfirmDialog } from 'vant'
 import logger from '../utils/logger'
 
 export default {
@@ -123,7 +123,7 @@ export default {
       
       if (action.name === '退出登录') {
         try {
-          await Dialog.confirm({
+          await showConfirmDialog({
             title: '确认退出',
             message: '确定要退出登录吗？'
           })

@@ -15,7 +15,14 @@
     "install:all": "npm install && cd server && npm install && cd ../client && npm install",
     "logs:view": "dir server\\logs",
     "logs:clean": "del /Q server\\logs\\*.log",
-    "debug:full": "concurrently \"npm run server:debug\" \"npm run client\""
+    "debug:full": "concurrently \"npm run server:debug\" \"npm run client\"",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "docker:dev": "docker-compose -f docker-compose.dev.yml up -d",
+    "docker:dev:down": "docker-compose -f docker-compose.dev.yml down",
+    "docker:clean": "docker-compose down -v && docker system prune -f"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",

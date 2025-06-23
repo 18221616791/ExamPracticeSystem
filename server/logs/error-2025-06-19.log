@@ -1,3 +1,0 @@
-[2025-06-19 12:29:26] [ERROR] [DATABASE] 数据库初始化失败 | {"error":"","stack":"AggregateError\n    at internalConnectMultiple (node:net:1111:18)\n    at afterConnectMultiple (node:net:1663:5)"}
-[2025-06-19 15:52:51] [ERROR] [APP] HTTP请求完成 | {"method":"GET","url":"/","statusCode":404,"duration":"515ms"}
-[2025-06-19 16:20:50] [ERROR] [APP] HTTP请求完成 | {"method":"POST","url":"/api/auth/login","statusCode":401,"duration":"138ms"}

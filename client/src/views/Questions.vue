@@ -81,7 +81,8 @@
                 class="option-item"
                 :class="{ 'correct-option': option === question.correct_answer }"
               >
-                {{ ['A', 'B', 'C', 'D'][index] }}. {{ option }}
+                {{ ['A', 'B', 'C', 'D','E'][index] }}. {{ option }}
+
               </div>
             </div>
             
@@ -132,7 +133,7 @@
             v-for="(option, index) in editForm.options"
             :key="index"
             v-model="editForm.options[index]"
-            :label="['A', 'B', 'C', 'D'][index] + '选项'"
+            :label="['A', 'B', 'C', 'D','E'][index] + '选项'"
             placeholder="请输入选项内容"
             :rules="[{ required: true, message: '请输入选项内容' }]"
           />
@@ -145,7 +146,7 @@
                   :key="index"
                   :name="option"
                 >
-                  {{ ['A', 'B', 'C', 'D'][index] }}
+                  {{ ['A', 'B', 'C', 'D','E'][index] }}
                 </van-radio>
               </van-radio-group>
             </template>
@@ -174,7 +175,7 @@
 <script>
 import { ref, computed, onMounted, reactive, watch } from 'vue'
 import { useStore } from 'vuex'
-import { showToast, Dialog } from 'vant'
+import { showToast, showConfirmDialog } from 'vant'
 import logger from '../utils/logger'
 
 export default {
@@ -281,7 +282,7 @@ export default {
         })
         
         if (result.success) {
-           Toast.success(result.message)
+           showToast({ type: 'success', message: result.message })
            showEditDialog.value = false
            
            // 重新获取题目列表以确保数据同步
@@ -289,10 +290,10 @@ export default {
            
            logger.info('题目编辑成功', editForm.id)
          } else {
-           Toast.fail(result.message)
+           showToast({ type: 'fail', message: result.message })
          }
       } catch (error) {
-         Toast.fail('保存失败')
+         showToast({ type: 'fail', message: '保存失败' })
          logger.error('保存题目失败', error)
        } finally {
         saving.value = false
@@ -302,7 +303,7 @@ export default {
     // 删除题目
     const deleteQuestion = async (question) => {
       try {
-        await Dialog.confirm({
+        await showConfirmDialog({
           title: '确认删除',
           message: `确定要删除题目 #${question.id} 吗？此操作不可恢复。`
         })
@@ -310,14 +311,14 @@ export default {
         const result = await store.dispatch('deleteQuestion', question.id)
         
         if (result.success) {
-           Toast.success(result.message)
+           showToast({ type: 'success', message: result.message })
            logger.info('题目删除成功', question.id)
          } else {
-           Toast.fail(result.message)
+           showToast({ type: 'fail', message: result.message })
          }
       } catch (error) {
          if (error !== 'cancel') {
-           Toast.fail('删除失败')
+           showToast({ type: 'fail', message: '删除失败' })
            logger.error('删除题目失败', error)
          }
        }

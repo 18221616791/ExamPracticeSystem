@@ -113,7 +113,7 @@
 import { ref, computed, onMounted } from 'vue'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
-import { showToast, Dialog } from 'vant'
+import { showToast, showConfirmDialog } from 'vant'
 import logger from '../utils/logger'
 
 export default {
@@ -203,22 +203,14 @@ export default {
     // 重新处理
     const retryUpload = async (record) => {
       try {
-        await Dialog.confirm({
+        await showConfirmDialog({
           title: '确认重新处理',
           message: `确定要重新处理文件 "${record.fileName}" 吗？`
         })
         
-        const response = await store._vm.$http.post(`/api/upload/retry/${record.id}`)
-        
-        if (response.data.success) {
-          Toast.success('已重新提交处理')
-          // 更新记录状态
-          record.status = 'pending'
-          record.errorMessage = null
-          logger.info('重新处理文件', record.id)
-        } else {
-          showToast(response.data.message || '重新处理失败')
-        }
+        // 重新处理功能暂未实现
+        Toast.fail('重新处理功能暂未实现')
+        logger.warn('重新处理功能暂未实现', record.id)
       } catch (error) {
         if (error !== 'cancel') {
           showToast('重新处理失败')
@@ -230,20 +222,14 @@ export default {
     // 删除记录
     const deleteRecord = async (record) => {
       try {
-        await Dialog.confirm({
+        await showConfirmDialog({
           title: '确认删除',
           message: `确定要删除记录 "${record.fileName}" 吗？此操作不可恢复。`
         })
         
-        const response = await store._vm.$http.delete(`/api/upload/records/${record.id}`)
-        
-        if (response.data.success) {
-          Toast.success('删除成功')
-          store.commit('REMOVE_IMPORT_RECORD', record.id)
-          logger.info('删除导入记录', record.id)
-        } else {
-          showToast(response.data.message || '删除失败')
-        }
+        // 删除记录功能暂未实现
+        Toast.fail('删除记录功能暂未实现')
+        logger.warn('删除记录功能暂未实现', record.id)
       } catch (error) {
         if (error !== 'cancel') {
           showToast('删除失败')
