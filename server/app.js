@@ -13,6 +13,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const crypto = require('crypto');
 const { Logger, logger } = require('./utils/logger');
+const { router: wechatRouter, setPool: setWechatPool } = require('./routes/wechat');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -1327,6 +1328,12 @@ app.delete('/api/questions/:id', authenticateToken, requireRole(['admin']), asyn
     res.status(500).json({ success: false, message: error.message });
   }
 });
+
+// 设置微信路由的数据库连接池
+setWechatPool(pool);
+
+// 微信登录相关路由
+app.use('/api/wechat', wechatRouter);
 
 // 健康检查端点
 app.get('/health', (req, res) => {

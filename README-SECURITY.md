@@ -27,9 +27,9 @@ JWT_SECRET=your_super_secure_jwt_secret_key_at_least_32_characters_long
 
 #### 部署相关
 - `SERVER_HOST`: 服务器IP地址
-- `SERVER_USER`: 服务器用户名
+- `SERVER_USER`: Git
 - `SERVER_SSH_KEY`: SSH私钥内容
-- `SERVER_PORT`: SSH端口（默认22）
+- `SERVER_PORT`: 22
 
 #### 测试环境
 - `TEST_DB_PASSWORD`: 测试数据库密码
